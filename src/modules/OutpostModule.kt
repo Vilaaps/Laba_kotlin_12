@@ -7,5 +7,6 @@ abstract class OutpostModule(
         level++
         println("$name улучшен до уровня $level")
     }
-    abstract fun performAction(manager: ResourceManager)
+    abstract fun performAction(manager: ResourceManager) : ModuleResult
 }
+
