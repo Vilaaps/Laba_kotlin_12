@@ -1,4 +1,4 @@
-﻿package src.src.example
+﻿package example
 // клаут
 fun main() {
 //    println("Программа запущена")

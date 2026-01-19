@@ -1,6 +1,4 @@
-﻿package src.src.example
-
-import java.security.cert.CertPathValidatorException.Reason
+﻿package example
 
 fun main() {
 //    val success = NetworkResult.Success("Данные получены")
