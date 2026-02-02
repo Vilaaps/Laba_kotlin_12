@@ -35,7 +35,7 @@ var counter: Int by Delegates.observable(0) {_, old, new ->
 }
 class User{
     var name: String by Delegates.observable("<no name>") {_, old, new ->
-        println("Имя изменено: '$old' -> '$new'")~~
+        println("Имя изменено: '$old' -> '$new'")
     }
 }
 
