@@ -1,5 +1,7 @@
 ﻿package modules
 
+import example.Messenger
+
 fun main() {
     val manager = ResourceManager()
     manager.add(OutpostResource(1, "Minerals", 300))
@@ -13,6 +15,9 @@ fun main() {
     handleModuleResult(labResult)
     println()
     manager.printAll()
+
+    logger.log("Запуск базы")
+
 }
 fun handleModuleResult(result: ModuleResult) {
     when (result) {
@@ -20,5 +25,16 @@ fun handleModuleResult(result: ModuleResult) {
         is ModuleResult.ResourceProduced -> println("Произведено: ${result.resourceName} + ${result.amount}")
         is ModuleResult.NotEnoughResources -> println("Недостаточно ресурсов ${result.resourceName}. Нужно ${result.required}, есть: ${result.available}")
         is ModuleResult.Error -> println("ОШИБКА: ${result.reason}")
+        }
     }
+object SystemLogger {
+    init {
+        println("SystemLogger инициализирован")
+    }
+    fun log(messenger: String) {
+        println("[LOG] $messenger")
+    }
+}
+val logger by lazy {
+    SystemLogger
 }
